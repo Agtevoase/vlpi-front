@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/node": "^16.11.12",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
-    "@types/redux-persist": "^4.3.1",
-    "@typescript-eslint/parser": "^5.4.0",
+    "@typescript-eslint/parser": "^5.6.0",
     "cra-template-typescript": "1.1.2",
-    "eslint": "^8.3.0",
     "eslint-config-airbnb": "^19.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
@@ -50,7 +49,9 @@
     ]
   },
   "devDependencies": {
+    "@types/redux-persist": "^4.3.1",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
     "redux-devtools": "^3.7.0"
   }
 }

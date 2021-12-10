@@ -22,6 +22,7 @@ module.exports = {
     jest: true,
   },
   parserOptions: {
+    project: './tsconfig.json',
     ecmaVersion: 2021,
     sourceType: "module",
     ecmaFeatures: {
@@ -38,7 +39,7 @@ module.exports = {
       version: "detect",
     },
     "import/parser": {
-      "@typescript-eslint/parser": [".ts", ".tsx"],
+      "@typescript-eslint/parser": [".ts", ".tsx", ".jx", ".jsx"],
     },
     "import/resolver": {
       typescript: {
@@ -91,6 +92,7 @@ module.exports = {
         groups: ["external", "internal", "parent", "index", "sibling"],
       },
     ],
+    "react/function-component-definition": "off",
     "import/extensions": "off",
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": "error",
