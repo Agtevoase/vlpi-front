@@ -62,10 +62,11 @@ module.exports = {
     ],
     "max-len": ["error", 120],
     "no-use-before-define": "off",
+    "no-unused-vars": "warn", 
     "@typescript-eslint/no-use-before-define": ["error"],
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-unused-vars": [
-      "error",
+      "warn",
       { varsIgnorePattern: "^_", argsIgnorePattern: "^_" },
     ],
     "@typescript-eslint/naming-convention": [
