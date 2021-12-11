@@ -1,5 +1,5 @@
 enum Routes {
-  API = 'localhost:8100'
+  API = 'http://localhost:8100'
 }
 
 export default Routes
