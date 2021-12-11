@@ -85,14 +85,6 @@ module.exports = {
     "arrow-body-style": "off",
     "import/no-unresolved": ["error", { ignore: [".css", ".scss", ".sass"] }],
     "jsx-a11y/anchor-is-valid": "off",
-    "import/order": [
-      "warn",
-      {
-        alphabetize: { order: "asc" },
-        "newlines-between": "always",
-        groups: ["external", "internal", "parent", "index", "sibling"],
-      },
-    ],
     "react/function-component-definition": "off",
     "import/extensions": "off",
     "no-shadow": "off",
