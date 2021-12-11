@@ -3,7 +3,10 @@ import { ThunkAction } from 'redux-thunk'
 
 import rootReducer from 'store'
 
-export type AnyActionType = unknown // To-Do: update action types later
+// To-Do: update action types later
+export type AnyAction = Action<unknown>
+
+export type AnyActionType = unknown
 
 export interface ReduxAction<ActionType = unknown, PayloadType = undefined>
   extends Action<ActionType> {
