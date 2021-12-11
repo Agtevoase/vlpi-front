@@ -13,7 +13,12 @@ export interface ReduxAction<ActionType = unknown, PayloadType = undefined>
   payload: PayloadType
 }
 
-export type ReduxState = ReturnType<typeof rootReducer>
+export type ReduxState = ReturnType<typeof rootReducer> & {
+  _persist?: {
+    version: number
+    rehydrated: boolean
+  }
+}
 
 export type Thunk<ReturnType = unknown> = ThunkAction<
   Promise<ReturnType | undefined | void>,
