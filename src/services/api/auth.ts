@@ -1,4 +1,4 @@
-import instance from '.'
+import { instance, getData } from '.'
 
 interface FetchLoginParameters {
   email: string
@@ -10,9 +10,9 @@ interface FetchRegisterParameters extends FetchLoginParameters {
 }
 
 export const fetchLogin = (params: FetchLoginParameters) =>
-  instance.post('/login', params)
+  getData(instance.post('/login', params))
 
 export const fetchRegister = (params: FetchRegisterParameters) =>
-  instance.post('/register', params)
+  getData(instance.post('/register', params))
 
 export const fetchLogout = () => instance.delete('/logout')
