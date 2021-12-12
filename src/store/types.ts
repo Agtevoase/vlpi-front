@@ -8,10 +8,17 @@ export type AnyAction = Action<unknown>
 
 export type AnyActionType = unknown
 
-export interface ReduxAction<ActionType = unknown, PayloadType = undefined>
+export interface ReduxActionWithPayload<ActionType, PayloadType>
   extends Action<ActionType> {
   payload: PayloadType
 }
+
+export type ReduxAction<
+  ActionType = AnyActionType,
+  PayloadType = undefined,
+> = PayloadType extends undefined
+  ? Action<ActionType>
+  : ReduxActionWithPayload<ActionType, PayloadType>
 
 export type ReduxState = ReturnType<typeof rootReducer> & {
   _persist?: {
