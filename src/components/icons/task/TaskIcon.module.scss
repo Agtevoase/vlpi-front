@@ -2,6 +2,7 @@
 .iconSpan {
     position: relative;
     display: inline-flex;
+    opacity: 1;
 }
 
 .number {
@@ -12,4 +13,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.failed {
+    filter: contrast(0) sepia(100%) hue-rotate(346deg) saturate(2000%) brightness(100%);
+    opacity: 1;
+}
+
+.passed {
+    filter: contrast(0) sepia(100%) hue-rotate(90deg) saturate(2000%) brightness(75%);
+    opacity: 1;
 }
