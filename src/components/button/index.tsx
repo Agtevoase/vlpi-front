@@ -24,6 +24,7 @@ const Button: React.FC<Props> = ({ text, type, ghost, onClick }) => {
       className={cn({
         [styles.ghost]: ghost,
         [styles[type]]: true,
+        [styles.button]:true
       })}
       onClick={onClick}
     >
