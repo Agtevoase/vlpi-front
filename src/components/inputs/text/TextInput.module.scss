@@ -1,0 +1,14 @@
+@import "../../../styles/_vars.scss";
+.input {
+    border-radius: 8px;
+    border: $inputs-text-border-color solid 1px;
+    color: black;
+    height: 48px;
+    stroke-opacity: 0.4;
+    padding: 10px;
+}
+
+.input::placeholder {
+    color: inputs-text-placeholder-color;
+    font-size: 16;
+}
