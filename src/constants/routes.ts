@@ -2,7 +2,7 @@ export enum Routes {
   API = 'http://194.213.104.146',
   login = '/login',
   register = '/register',
-  modules = '/modules',
+  home = '/',
   exercises = '/exercises',
   exercise = '/exercises/[id]',
   profile = '/profile',

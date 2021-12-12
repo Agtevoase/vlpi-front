@@ -1,10 +1,6 @@
 import { useParams } from 'react-router-dom'
 
-interface Props {
-  id: number
-}
-
-const ExercisePage: React.FC<Props> = () => {
+const ExercisePage: React.FC = () => {
   const { id } = useParams()
 
   return null
