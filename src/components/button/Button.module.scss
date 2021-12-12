@@ -1,0 +1,91 @@
+@import '../../styles/vars';
+.primary {
+    background-color: $primary;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-weight: 600;
+    height: 52px;
+    &:hover {
+        border: none;
+        background-color: $primary-light;
+    }
+}
+
+.danger {
+    background-color: white;
+    color: $danger;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid $danger;
+    border-radius: 8px;
+    font-weight: 600;
+    height: 52px;
+    &:hover {
+        border: none;
+        background-color: $danger;
+        color: white;
+    }
+}
+
+.success {
+    background-color: $success;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    height: 52px;
+    &:hover {
+        background-color: $success-light;
+    }
+}
+
+.secondary {
+    background-color: white;
+    color: $success;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid $success;
+    border-radius: 8px;
+    font-weight: 600;
+    height: 52px;
+    &:hover {
+        border: none;
+        background-color: $success;
+        color: white;
+    }
+}
+
+.light {
+    background-color: $light;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    height: 52px;
+    &:hover {
+        background-color: $light-light;
+    }
+}
+
+.ghost-light {
+    background-color: white;
+    color: $light;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid $light;
+    border-radius: 8px;
+    font-weight: 600;
+    height: 52px;
+    &:hover {
+        border: none;
+        background-color: $light;
+        color: white;
+    }
+}
