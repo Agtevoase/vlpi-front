@@ -5,30 +5,23 @@ import Loader from 'common/loader'
 
 import configureStore from 'boot/configureStore'
 import { setStore } from 'services/store'
-
-
-import Button, { ButtonType } from 'components/button'
-import FailIcon from 'components/icons/fail'
-import OkIcon from 'components/icons/ok'
-import Mark from 'components/mark'
-import TextInput from './components/inputs/text'
-
-
-
+import TaskIcon from 'components/icons/task'
+import Block, { BlockType } from 'components/block'
+import Examples from 'Examples'
 
 const App = () => {
-    const { persistor, store } = configureStore()
+  const { persistor, store } = configureStore()
 
-    setStore(store)
+  setStore(store)
 
-    return (
-        <PersistGate persistor={persistor} loading={<Loader withSpace />}>
-            <Provider store={store}>
-
-                <div className="page" />
-            </Provider>
-        </PersistGate>
-    )
+  return (
+    <PersistGate persistor={persistor} loading={<Loader withSpace />}>
+      <Provider store={store}>
+        <Examples/>
+        <div className="page" />
+      </Provider>
+    </PersistGate>
+  )
 }
 
 export default App
