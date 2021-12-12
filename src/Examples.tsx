@@ -9,6 +9,8 @@ import DraftIcon from 'components/icons/draft'
 import TextInput from 'components/inputs/text'
 import Button, { ButtonType } from 'components/button'
 import Mark from 'components/mark'
+import NarBarButton from 'components/navBarButton'
+import ExitIcon from 'components/icons/exit'
 
 
 
@@ -42,6 +44,7 @@ const Examples = () => {
         <Mark markValue={70} minMark={80}/>
         <Mark markValue={82} minMark={80}/>
         <Mark markValue={99} minMark={100}/>
+        <NarBarButton  onClick={ () => console.log('1')}> <ExitIcon/></NarBarButton>
         <div className="page" />
     
     </div>
