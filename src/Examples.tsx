@@ -30,6 +30,7 @@ const Examples = () => {
         <Block text='tt' onRemoveClick={()=>console.log('f')} order={1}/>
         <Block text='tt' onRemoveClick={()=>console.log('f')} />
         <TextInput placeholder='placeholder text'/>
+        <TextInput placeholder='placeholder text1' error='Bad passwrod'/>
 
         <Button type={ButtonType.Primary} onClick={ () => console.log('1')} text='Primary Button'/>
         <Button type={ButtonType.Secondary} onClick={ () => console.log('1')} text='Secondary Button'/>

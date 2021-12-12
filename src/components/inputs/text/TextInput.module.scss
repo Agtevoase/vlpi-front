@@ -6,6 +6,27 @@
     height: 48px;
     stroke-opacity: 0.4;
     padding: 10px;
+    margin-bottom: 30px;
+    transition: 0.2s;
+    outline: none;
+    &:active,
+    &:focus {
+        border: 1px black solid;
+    }
+}
+
+.error {
+    position: absolute;
+    color: $danger;
+    font-size: 14px;
+    bottom: 10px;
+    left: 10px;
+}
+
+.label {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
 }
 
 .input::placeholder {

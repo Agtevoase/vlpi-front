@@ -19,14 +19,15 @@
         right: 10px;
         position: absolute;
         transform: translateY(6%);
+        transition: background-color 0.2s;
+        padding: 3px 4px 4px 5px;
+        transform: translateX(5px);
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
         &:hover {
             background-color: $light-light;
-            padding: 3px 4px 4px 5px;
-            transform: translateX(5px);
-            border-radius: 50%;
-            width: 25px;
-            height: 25px;
-            cursor: pointer;
         }
     }
     
