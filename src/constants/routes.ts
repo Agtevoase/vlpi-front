@@ -1,4 +1,4 @@
-enum Routes {
+export enum Routes {
   API = 'http://194.213.104.146',
   login = '/login',
   register = '/register',
@@ -8,4 +8,5 @@ enum Routes {
   profile = '/profile',
 }
 
-export default Routes
+export const getRouterPath = (route: string) =>
+  route.replace(/\[(.+)\]/, (_, gr) => `:${gr}`)
