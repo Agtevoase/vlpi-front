@@ -6,16 +6,6 @@ import Loader from 'common/loader'
 import configureStore from 'boot/configureStore'
 import { setStore } from 'services/store'
 
-
-import Button, { ButtonType } from 'components/button'
-import FailIcon from 'components/icons/fail'
-import OkIcon from 'components/icons/ok'
-import Mark from 'components/mark'
-import TextInput from './components/inputs/text'
-
-
-
-
 const App = () => {
     const { persistor, store } = configureStore()
 
