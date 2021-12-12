@@ -9,6 +9,8 @@ import DraftIcon from 'components/icons/draft'
 import TextInput from 'components/inputs/text'
 import Button, { ButtonType } from 'components/button'
 import Mark from 'components/mark'
+import NarBarButton from 'components/navBarButton'
+import ExitIcon from 'components/icons/exit'
 
 
 
@@ -30,6 +32,7 @@ const Examples = () => {
         <Block text='tt' onRemoveClick={()=>console.log('f')} order={1}/>
         <Block text='tt' onRemoveClick={()=>console.log('f')} />
         <TextInput placeholder='placeholder text'/>
+        <TextInput placeholder='placeholder text1' error='Bad passwrod'/>
 
         <Button type={ButtonType.Primary} onClick={ () => console.log('1')} text='Primary Button'/>
         <Button type={ButtonType.Secondary} onClick={ () => console.log('1')} text='Secondary Button'/>
@@ -41,6 +44,7 @@ const Examples = () => {
         <Mark markValue={70} minMark={80}/>
         <Mark markValue={82} minMark={80}/>
         <Mark markValue={99} minMark={100}/>
+        <NarBarButton  onClick={ () => console.log('1')}> <ExitIcon/></NarBarButton>
         <div className="page" />
     
     </div>
