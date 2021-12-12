@@ -25,37 +25,6 @@ const App = () => {
         <PersistGate persistor={persistor} loading={<Loader withSpace />}>
             <Provider store={store}>
 
-                <Button text="Login" type={ButtonType.Primary} onClick={() => {
-                    console.log("f")
-                }} />
-
-                <Button text="Danger Button" type={ButtonType.Danger} onClick={() => {
-                    console.log("f")
-                }} />
-
-                <Button text="Login" type={ButtonType.Success} onClick={() => {
-                    console.log("f")
-                }} />
-
-                <Button text="Login" type={ButtonType.Secondary} onClick={() => {
-                    console.log("f")
-                }} />
-
-                <Button text="Login" type={ButtonType.Light} onClick={() => {
-                    console.log("f")
-                }} />
-
-                <Button text="Login" type={ButtonType.GhostLight} onClick={() => {
-                    console.log("f")
-                }} />
-
-                <Mark markValue={30} minMark={30}/>
-                <Mark markValue={29} minMark={30}/>
-
-                <FailIcon />
-                <OkIcon />
-                <TextInput t={undefined} placeholder="example@mail.com" />
-
                 <div className="page" />
             </Provider>
         </PersistGate>
