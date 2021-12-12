@@ -5,9 +5,8 @@ import Loader from 'common/loader'
 
 import configureStore from 'boot/configureStore'
 import { setStore } from 'services/store'
-import TaskIcon from 'components/icons/task'
-import Block, { BlockType } from 'components/block'
 import Examples from 'Examples'
+import NavBar from 'common/navBar'
 
 const App = () => {
   const { persistor, store } = configureStore()
@@ -17,7 +16,8 @@ const App = () => {
   return (
     <PersistGate persistor={persistor} loading={<Loader withSpace />}>
       <Provider store={store}>
-        <Examples/>
+        <NavBar userName='John Smith'/>
+        <Examples />
         <div className="page" />
       </Provider>
     </PersistGate>
