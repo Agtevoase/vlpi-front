@@ -1,6 +1,6 @@
-import instance, { getAuthHeaders } from '.'
+import instance, { getAuthHeaders, getData } from '.'
 
 export const fetchExercises = () =>
-  instance.get('/exercises', { headers: getAuthHeaders() })
+  getData(instance.get('/exercises', { headers: getAuthHeaders() }))
 
 export default { fetchExercises }
