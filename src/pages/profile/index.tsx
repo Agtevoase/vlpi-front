@@ -1,5 +1,18 @@
-import ProfileContainer from "containers/profile"
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
-const ProfilePage: React.FC = () => <ProfileContainer/>
+import ProfileContainer from 'containers/profile'
+
+import { getProfile } from 'store/auth/actions'
+
+const ProfilePage: React.FC = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getProfile())
+  }, [])
+
+  return <ProfileContainer />
+}
 
 export default ProfilePage

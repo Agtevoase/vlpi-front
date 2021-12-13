@@ -67,10 +67,6 @@ const RegisterContainer: React.FC = () => {
             className={styles.textInput}
             {...formik.getFieldProps('password')}
           />
-          <div className={styles.noAccount}>
-            Don&apos;t have an account?{' '}
-            <Link to={Routes.register}>Register</Link>
-          </div>
           <Button
             type={ButtonType.Primary}
             onClick={() => undefined}
