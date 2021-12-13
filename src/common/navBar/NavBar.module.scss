@@ -1,0 +1,38 @@
+@import '../../styles/vars';
+.navBar {
+    background-color: $primary;
+    height: 80px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    font-size: 48px;
+    color: white;
+    font-weight: 700;
+}
+
+.home {
+    margin-right: auto;
+    margin-left: 16px;
+}
+
+.profile {
+    margin-right: 16px;
+}
+
+.exit {
+    margin-right: 16px;
+}
+
+.userName {
+    margin-left: auto;
+    margin-right: 40px;
+    font-size: 28px;
+    color: white;
+}
