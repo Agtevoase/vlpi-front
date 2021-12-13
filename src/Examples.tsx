@@ -11,6 +11,7 @@ import Button, { ButtonType } from 'components/button'
 import Mark from 'components/mark'
 import NarBarButton from 'components/navBarButton'
 import ExitIcon from 'components/icons/exit'
+import ModuleButton from 'components/moduleButton'
 
 
 
@@ -44,7 +45,24 @@ const Examples = () => {
         <Mark markValue={70} minMark={80}/>
         <Mark markValue={82} minMark={80}/>
         <Mark markValue={99} minMark={100}/>
-        <NarBarButton  onClick={ () => console.log('1')}> <ExitIcon/></NarBarButton>
+
+
+        <ModuleButton  moduleName='Requirements' moduleDescription='Test your skills in the ability
+         to write software requirements ...'/>
+
+        <ModuleButton  moduleName='Design' moduleDescription='Test your skills in the ability
+         of designing software UI ...'/>
+
+        <ModuleButton  moduleName='Modelling' moduleDescription='Test your skills in the ability
+         of modelling software ...'/>
+
+        <ModuleButton  moduleName='Coding' moduleDescription='Test your skills in the ability
+         of coding ...'/>
+
+        <ModuleButton  moduleName='Testing' moduleDescription='Test your skills in the ability
+         of testing software functionality ...' 
+        onClick={ () => console.log('1')}/>
+        
         <div className="page" />
     
     </div>
