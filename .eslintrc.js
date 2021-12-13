@@ -82,6 +82,7 @@ module.exports = {
     ],
     'react/react-in-jsx-scope': 'off',
     'explicit-module-boundary-types': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'arrow-body-style': 'off',
     'import/no-unresolved': ['error', { ignore: ['.css', '.scss', '.sass'] }],
     'jsx-a11y/anchor-is-valid': 'off',
