@@ -1,8 +1,12 @@
+import cn from 'classnames'
 import DraftIcon from 'components/icons/draft'
 import FailedIcon from 'components/icons/failed'
 
+import HomeIcon from 'components/icons/home'
 import PassedIcon from 'components/icons/passed'
 import TaskIcon from 'components/icons/task'
+
+import NavBarButton from 'components/navBarButton'
 
 import styles from './TaskItem.module.scss'
 
@@ -51,13 +55,7 @@ const TaskItem: React.FC<Props> = ({
   }
 
   return (
-    <div role="button" 
-    tabIndex={0}
-    className={styles.taskItem}
-    onClick={() => onClick(id)}
-    onKeyDown={() => undefined}
-    >
-
+    <div className={styles.taskItem}>
       <TaskIcon taskNumber={number} />
       <span className={styles.taskTitle}>{title}</span>
       <span className={styles.taskResult}>{score}</span>
