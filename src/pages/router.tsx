@@ -6,6 +6,8 @@ import {
   Routes as Switch,
 } from 'react-router-dom'
 
+import NavBar from 'common/navBar'
+
 import { ReduxState } from 'store/types'
 import { Routes, getRouterPath } from 'constants/routes'
 
@@ -24,6 +26,7 @@ const Router: React.FC = () => {
 
   return (
     <BrowserRouter>
+      <NavBar />
       <Switch>
         <Route
           path={Routes.login}

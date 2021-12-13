@@ -77,52 +77,6 @@ const Examples = () => {
       <Mark markValue={70} minMark={80} />
       <Mark markValue={82} minMark={80} />
       <Mark markValue={99} minMark={100} />
-
-      <ModuleButton
-        moduleName="Requirements"
-        moduleDescription="Test your skills in the ability
-         to write software requirements ..."
-      />
-
-      <ModuleButton
-        moduleName="Design"
-        moduleDescription="Test your skills in the ability
-         of designing software UI ..."
-      />
-
-      <ModuleButton
-        moduleName="Modelling"
-        moduleDescription="Test your skills in the ability
-         of modelling software ..."
-      />
-
-      <ModuleButton
-        moduleName="Coding"
-        moduleDescription="Test your skills in the ability
-         of coding ..."
-      />
-
-      <ModuleButton
-        moduleName="Testing"
-        moduleDescription="Test your skills in the ability
-         of testing software functionality ..."
-        onClick={() => console.log('1')}
-      />
-
-      <TaskList
-        tasks={[
-          { id: 1, number: 1, title: 'Task1', isDraft: true },
-          { id: 2, number: 2, title: 'Task2', minMark: 80 },
-          { id: 3, number: 3, title: 'Task3', minMark: 90, markValue: 86 },
-          { id: 2, number: 4, title: 'Task2', minMark: 80 },
-          { id: 3, number: 5, title: 'Task3', minMark: 90, markValue: 86 },
-          { id: 3, number: 6, title: 'Task3', minMark: 90, markValue: 86 },
-          { id: 3, number: 7, title: 'Task3', minMark: 90, markValue: 86 },
-          { id: 3, number: 8, title: 'Task3', minMark: 90, markValue: 86 },
-          { id: 4, number: 9, title: 'Task4', minMark: 95, markValue: 98 },
-        ]}
-        onClick={(id) => console.log(id)}
-      />
       <div className="page" />
     </div>
   )
