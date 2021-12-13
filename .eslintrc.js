@@ -58,6 +58,7 @@ module.exports = {
     'max-len': ['error', 120],
     'no-use-before-define': 'off',
     'no-unused-vars': 'warn',
+    'no-unused-expressions': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-unused-vars': [
@@ -76,6 +77,7 @@ module.exports = {
       },
     ],
     'react/react-in-jsx-scope': 'off',
+    'no-underscore-dangle': 'off',
     'explicit-module-boundary-types': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'arrow-body-style': 'off',
