@@ -1,4 +1,5 @@
 import cn from 'classnames'
+import TaskItem from 'common/taskItem'
 import DraftIcon from 'components/icons/draft'
 import FailedIcon from 'components/icons/failed'
 
@@ -8,65 +9,47 @@ import TaskIcon from 'components/icons/task'
 
 import NavBarButton from 'components/navBarButton'
 
-import styles from './TaskItem.module.scss'
+import styles from './TaskList.module.scss'
 
 export const enum BlockType {
   Passed = 'passed',
   Failed = 'failed',
 }
 
-interface Props {
+interface Task {
   number: number
   title: string
   id: number
   markValue?: number
   minMark?: number
   isDraft?: boolean
+}
+
+interface Props {
+  tasks: Task[]
   onClick: (id: number) => void
 }
 
-const TaskItem: React.FC<Props> = ({
-  id,
-  number,
-  title,
-  markValue,
-  minMark,
-  isDraft,
-  onClick,
-}) => {
-  let passIcon
-  let score
-
-  const minMarkText = `${minMark ?? 100}%`
-
-  if (markValue) {
-    if (markValue < (minMark ?? 100)) {
-      passIcon = <FailedIcon />
-    } else {
-      passIcon = <PassedIcon />
-    }
-
-    score = `Best: ${markValue}%`
-  } else if (isDraft) {
-    passIcon = <DraftIcon />
-    score = 'Draft'
-  } else {
-    score = 'No Atempts'
-  }
-
+const TaskList: React.FC<Props> = ({ tasks, onClick }) => {
   return (
-    <div className={styles.taskItem}>
-      <TaskIcon taskNumber={number} />
-      <span className={styles.taskTitle}>{title}</span>
-      <span className={styles.taskResult}>{score}</span>
-
-      <span className={styles.minMark}>
-        <div>min.</div>
-        <div>{minMarkText}</div>
-      </span>
-      <span className={styles.passIcon}>{passIcon}</span>
+    <div className={styles.taskList}>
+      <div className={styles.taskListBox}>
+        {tasks.map((task) => (
+          <div key={task.id}>
+            <TaskItem
+              isDraft={task.isDraft}
+              markValue={task.markValue}
+              minMark={task.minMark}
+              number={task.number}
+              title={task.title}
+              id={task.id}
+              onClick={() => onClick(task.id)}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
 
-export default TaskItem
+export default TaskList

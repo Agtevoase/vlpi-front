@@ -35,7 +35,8 @@
 
 .passIcon {
     min-width: 52px;
-    transform: scale(75%);
+    transform: scale(75%) translateY(3px);
+    margin-right: 20px;
 }
 
 .minMark {

@@ -12,6 +12,7 @@ import NarBarButton from 'components/navBarButton'
 import ExitIcon from 'components/icons/exit'
 import ModuleButton from 'components/moduleButton'
 import TaskItem from 'common/taskItem'
+import TaskList from 'common/taskList'
 
 // TODO: Delete later
 const Examples = () => {
@@ -108,37 +109,20 @@ const Examples = () => {
         onClick={() => console.log('1')}
       />
 
-      <div>
-        <TaskItem
-          id={0}
-          onClick={(id) => console.log(id)}
-          number={1}
-          title="Task1"
-        />
-        <TaskItem
-          id={0}
-          onClick={(id) => console.log(id)}
-          number={2}
-          title="Task1"
-          markValue={78}
-          minMark={85}
-        />
-        <TaskItem
-          id={0}
-          onClick={(id) => console.log(id)}
-          number={3}
-          title="Task1"
-          markValue={89}
-          minMark={85}
-        />
-        <TaskItem
-          id={0}
-          onClick={(id) => console.log(id)}
-          number={3}
-          title="Task1"
-          isDraft
-        />
-      </div>
+      <TaskList
+        tasks={[
+          { id: 1, number: 1, title: 'Task1', isDraft: true },
+          { id: 2, number: 2, title: 'Task2', minMark: 80 },
+          { id: 3, number: 3, title: 'Task3', minMark: 90, markValue: 86 },
+          { id: 2, number: 4, title: 'Task2', minMark: 80 },
+          { id: 3, number: 5, title: 'Task3', minMark: 90, markValue: 86 },
+          { id: 3, number: 6, title: 'Task3', minMark: 90, markValue: 86 },
+          { id: 3, number: 7, title: 'Task3', minMark: 90, markValue: 86 },
+          { id: 3, number: 8, title: 'Task3', minMark: 90, markValue: 86 },
+          { id: 4, number: 9, title: 'Task4', minMark: 95, markValue: 98 },
+        ]}
+        onClick={(id) => console.log(id)}
+      />
       <div className="page" />
     </div>
   )

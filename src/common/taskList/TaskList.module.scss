@@ -1,0 +1,12 @@
+@import '../../styles/vars';
+.taskList {
+    border: 2px solid $light;
+    border-radius: 24px;
+    overflow: hidden;
+    margin: 100px;
+}
+
+.taskListBox {
+    transform: translateY(-2px);
+    overflow: hidden;
+}
