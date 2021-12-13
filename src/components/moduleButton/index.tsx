@@ -26,8 +26,6 @@ const ModuleButton: React.FC<Props> = ({
 }) => {
   const [hover, setHover] = useState(false)
 
-  // const hoverStyle = {filter: hover ? `drop-shadow( 0px 0px 6px ${shadowColor ?? 'white'})` : ''};
-
   return (
     <span
       onMouseEnter={() => {
@@ -45,7 +43,6 @@ const ModuleButton: React.FC<Props> = ({
       })}
       onClick={onClick}
       onKeyDown={onClick}
-      // style={{ ...hoverStyle}}
     >
 
 
