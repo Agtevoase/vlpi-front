@@ -45,13 +45,15 @@ const LoginContainer: React.FC = () => {
         <h1>Login</h1>
         <form onSubmit={formik.handleSubmit}>
           <TextInput
-            label="Username"
+            label="Email address"
             className={styles.textInput}
+            placeholder="example@mail.com"
             {...formik.getFieldProps('email')}
           />
           <TextInput
             label="Password"
             type="password"
+            placeholder="********"
             className={styles.textInput}
             {...formik.getFieldProps('password')}
           />
