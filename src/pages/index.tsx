@@ -1,3 +1,5 @@
-const HomePage: React.FC = () => <div />
+import HomeContainer from 'containers/home'
+
+const HomePage: React.FC = () => <HomeContainer />
 
 export default HomePage
