@@ -14,6 +14,19 @@
     justify-content: center;
 }
 
+.markBox {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.minMark {
+    margin-bottom: 0;
+    color: $bad;
+    font-size: 20px;
+}
+
 .badMark {
     color: $bad;
     border-color: $bad;
