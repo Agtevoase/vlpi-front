@@ -6,32 +6,36 @@ import * as Yup from 'yup'
 import BlurredContainer from 'common/blurred-container'
 import Button, { ButtonType } from 'components/button'
 import TextInput from 'components/inputs/text'
+
 import { Routes } from 'constants/routes'
-import { login } from 'store/auth/actions'
+import { register } from 'store/auth/actions'
 
 import styles from './styles.module.scss'
 
 interface FormValues {
+  name: string
   email: string
   password: string
 }
 
-const LoginContainer: React.FC = () => {
+const RegisterContainer: React.FC = () => {
   const dispatch = useDispatch()
 
   const initialValues: FormValues = {
+    name: '',
     email: '',
     password: '',
   }
 
   const validationSchema = Yup.object().shape({
+    name: Yup.string(),
     email: Yup.string().email(),
     password: Yup.string(),
   })
 
   const onSubmit = (values: FormValues) => {
     try {
-      dispatch(login(values.email, values.password))
+      dispatch(register(values.name, values.email, values.password))
     } catch (error) {
       console.log(error)
     }
@@ -45,9 +49,15 @@ const LoginContainer: React.FC = () => {
         <h1>Login</h1>
         <form onSubmit={formik.handleSubmit}>
           <TextInput
-            label="Email address"
+            label="Username"
+            placeholder="Your name"
             className={styles.textInput}
+            {...formik.getFieldProps('name')}
+          />
+          <TextInput
+            label="Email address"
             placeholder="example@mail.com"
+            className={styles.textInput}
             {...formik.getFieldProps('email')}
           />
           <TextInput
@@ -57,14 +67,10 @@ const LoginContainer: React.FC = () => {
             className={styles.textInput}
             {...formik.getFieldProps('password')}
           />
-          <div className={styles.noAccount}>
-            Don&apos;t have an account?{' '}
-            <Link to={Routes.register}>Register</Link>
-          </div>
           <Button
             type={ButtonType.Primary}
             onClick={() => undefined}
-            text="Login"
+            text="Register"
             submit
           />
         </form>
@@ -73,4 +79,4 @@ const LoginContainer: React.FC = () => {
   )
 }
 
-export default LoginContainer
+export default RegisterContainer

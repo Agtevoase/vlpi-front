@@ -1,14 +1,12 @@
-import { useFormik } from 'formik'
-import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
-import * as Yup from 'yup'
-
+import { useDispatch, useSelector } from 'react-redux'
 import cn from 'classnames'
-import BlurredContainer from 'common/blurred-container'
+
+import Loader from 'common/loader'
 import Button, { ButtonType } from 'components/button'
-import TextInput from 'components/inputs/text'
+
 import { Routes } from 'constants/routes'
-import { login } from 'store/auth/actions'
+import { logout } from 'store/auth/actions'
+import { ReduxState } from 'store/types'
 
 import styles from './styles.module.scss'
 
@@ -19,25 +17,29 @@ function timeText(minutes: number): string {
 }
 
 const ProfileContainer: React.FC = () => {
+  const { profile } = useSelector((state: ReduxState) => state.auth)
   const dispatch = useDispatch()
 
-  const tasksDone = 27
-  const tasksLeft = 164
-  const totalTasksAvailable = tasksDone + tasksLeft
-  const userName = 'John Smith'
-  const totalTimeSpent = timeText(tasksDone * 15)
-  const averageScore = 84
+  if (!profile) {
+    return <Loader />
+  }
+
+  const { exercisesDone, exercisesLeft, averageMark } = profile.statistics
+  const { name } = profile
+
+  const totalTasksAvailable = exercisesDone + exercisesLeft
+  const totalTimeSpent = timeText(exercisesDone * 15)
 
   const markStyle = cn({
     [styles.statText]: true,
-    [styles.green]: averageScore >= 80,
-    [styles.red]: averageScore < 80,
+    [styles.green]: (averageMark ?? 0) >= 80,
+    [styles.red]: (averageMark ?? 0) < 80,
   })
 
   return (
     <div className={styles.container}>
       <div className={styles.box}>
-        <span className={styles.userName}>{userName}</span>
+        <span className={styles.userName}>{name}</span>
         <div className={styles.stat}>
           <span className={styles.leftStat}>
             <span
@@ -47,27 +49,27 @@ const ProfileContainer: React.FC = () => {
             <span className={styles.statText} />
             <span
               className={styles.statText}
-            >{`Tasks done: ${tasksDone}`}</span>
+            >{`Tasks done: ${exercisesDone}`}</span>
             <span
               className={styles.statText}
-            >{`Tasks left: ${tasksLeft}`}</span>
+            >{`Tasks left: ${exercisesLeft}`}</span>
             <span
               className={styles.statText}
             >{`Total tasks available: ${totalTasksAvailable}`}</span>
           </span>
 
           <span className={styles.rightStat}>
-            <span
-              className={markStyle}
-            >{`Average score: ${averageScore}%`}</span>
+            <span className={markStyle}>{`Average score: ${
+              averageMark ?? 0
+            }%`}</span>
             <span className={styles.statText} />
 
             <span className={styles.statText}>Requirement score: -</span>
             <span className={styles.statText}>Design score: -</span>
             <span className={styles.statText}>Modelling score: -</span>
-            <span
-              className={markStyle}
-            >{`Testing score: ${averageScore}%`}</span>
+            <span className={markStyle}>{`Testing score: ${
+              averageMark ?? 0
+            }%`}</span>
           </span>
         </div>
 
@@ -75,18 +77,18 @@ const ProfileContainer: React.FC = () => {
           <div className={styles.button1}>
             <Button
               type={ButtonType.GhostLight}
-              onClick={() => console.log('1')}
+              onClick={() => window.history.back()}
               text="Back"
             />
           </div>
           <div className={styles.button2}>
             <Button
               type={ButtonType.GhostLight}
-              onClick={() => console.log('1')}
+              onClick={() => dispatch(logout())}
               text="Log Out"
             />
           </div>
-          <div className={styles.button3}>
+          {/* <div className={styles.button3}>
             <Button
               type={ButtonType.Light}
               onClick={() => console.log('1')}
@@ -99,7 +101,7 @@ const ProfileContainer: React.FC = () => {
               onClick={() => console.log('1')}
               text="Change Password"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

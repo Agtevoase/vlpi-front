@@ -9,6 +9,15 @@ export interface UserWithToken {
   user: User
 }
 
+export interface FullUser extends User {
+  avatar: string
+  statistics: {
+    averageMark: number | null
+    exercisesDone: number
+    exercisesLeft: number
+  }
+}
+
 export interface Exercise {
   id: number
   userId: number
