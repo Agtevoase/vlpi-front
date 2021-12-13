@@ -45,9 +45,9 @@ const reducer = (state = initialState, action: AuthAction): State => {
         token: action.payload.token,
         user: {
           ...state.user,
-          id: action.payload.id,
-          name: action.payload.name,
-          email: action.payload.email,
+          id: action.payload.user.id,
+          name: action.payload.user.name,
+          email: action.payload.user.email,
         },
       }
     }

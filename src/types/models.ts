@@ -4,6 +4,7 @@ export interface User {
   email: string
 }
 
-export interface UserWithToken extends User {
+export interface UserWithToken {
   token: string
+  user: User
 }
