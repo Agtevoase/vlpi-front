@@ -19,28 +19,35 @@ import ExercisesPage from './exercises'
 const Router: React.FC = () => {
   const { token } = useSelector((state: ReduxState) => state.auth)
 
-  const navigateElement = <Navigate to={Routes.login} />
+  const navigateToLogin = <Navigate to={Routes.login} />
+  const navigateToHome = <Navigate to={Routes.home} />
 
   return (
     <BrowserRouter>
       <Switch>
-        <Route path={Routes.login} element={<LoginPage />} />
-        <Route path={Routes.register} element={<RegisterPage />} />
+        <Route
+          path={Routes.login}
+          element={token ? navigateToHome : <LoginPage />}
+        />
+        <Route
+          path={Routes.register}
+          element={token ? navigateToHome : <RegisterPage />}
+        />
         <Route
           path={Routes.profile}
-          element={token ? <ProfilePage /> : navigateElement}
+          element={token ? <ProfilePage /> : navigateToLogin}
         />
         <Route
           path={getRouterPath(Routes.exercise)}
-          element={token ? <ExercisePage /> : navigateElement}
+          element={token ? <ExercisePage /> : navigateToLogin}
         />
         <Route
           path={Routes.exercises}
-          element={token ? <ExercisesPage /> : navigateElement}
+          element={token ? <ExercisesPage /> : navigateToLogin}
         />
         <Route
           path={Routes.home}
-          element={token ? <HomePage /> : navigateElement}
+          element={token ? <HomePage /> : navigateToLogin}
         />
       </Switch>
     </BrowserRouter>

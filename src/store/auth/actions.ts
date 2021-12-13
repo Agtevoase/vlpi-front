@@ -10,7 +10,7 @@ export const register =
     try {
       dispatch(action(AuthActionType.FETCH_REGISTER_BEGIN))
 
-      const data = await fetchRegister({ name, email, password })
+      const { data } = await fetchRegister({ name, email, password })
 
       dispatch(action(AuthActionType.FETCH_REGISTER_SUCCESS, data))
     } catch (error) {
@@ -24,7 +24,7 @@ export const login =
     try {
       dispatch(action(AuthActionType.FETCH_LOGIN_BEGIN))
 
-      const data = await fetchLogin({ email, password })
+      const { data } = await fetchLogin({ email, password })
 
       dispatch(action(AuthActionType.FETCH_LOGIN_SUCCESS, data))
     } catch (error) {
@@ -36,9 +36,9 @@ export const logout = (): Thunk => async (dispatch) => {
   try {
     dispatch(action(AuthActionType.FETCH_LOGOUT_BEGIN))
 
-    const data = await fetchLogout()
+    await fetchLogout()
 
-    dispatch(action(AuthActionType.FETCH_LOGOUT_SUCCESS, data))
+    dispatch(action(AuthActionType.FETCH_LOGOUT_SUCCESS))
   } catch (error) {
     dispatch(action(AuthActionType.FETCH_LOGOUT_ERROR, error))
   }

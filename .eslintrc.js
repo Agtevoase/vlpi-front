@@ -54,12 +54,7 @@ module.exports = {
       { extensions: ['.js', '.jsx', '.tsx'] },
     ],
     'react/prop-types': 'off',
-    'react/jsx-props-no-spreading': [
-      'error',
-      {
-        html: 'ignore',
-      },
-    ],
+    'react/jsx-props-no-spreading': 'off',
     'max-len': ['error', 120],
     'no-use-before-define': 'off',
     'no-unused-vars': 'warn',

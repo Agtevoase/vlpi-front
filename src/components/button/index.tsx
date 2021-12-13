@@ -12,19 +12,20 @@ export const enum ButtonType {
 
 interface Props {
   text?: string
+  submit?: boolean
   type: ButtonType
   ghost?: boolean
   onClick: () => void
 }
 
-const Button: React.FC<Props> = ({ text, type, ghost, onClick }) => {
+const Button: React.FC<Props> = ({ text, type, ghost, onClick, submit }) => {
   return (
     <button
-      type="button"
+      type={submit ? 'submit' : 'button'}
       className={cn({
         [styles.ghost]: ghost,
         [styles[type]]: true,
-        [styles.button]:true
+        [styles.button]: true,
       })}
       onClick={onClick}
     >
