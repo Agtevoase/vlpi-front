@@ -2,16 +2,24 @@ import { Action } from 'redux'
 import { ThunkAction } from 'redux-thunk'
 
 import rootReducer from 'store'
+import { AuthAction, AuthActionType } from './auth/types'
 
 // To-Do: update action types later
-export type AnyAction = Action<unknown>
+export type AnyAction = AuthAction
 
-export type AnyActionType = unknown
+export type AnyActionType = AuthActionType
 
-export interface ReduxAction<ActionType = unknown, PayloadType = undefined>
+export interface ReduxActionWithPayload<ActionType, PayloadType>
   extends Action<ActionType> {
   payload: PayloadType
 }
+
+export type ReduxAction<
+  ActionType = AnyActionType,
+  PayloadType = undefined,
+> = PayloadType extends undefined
+  ? Action<ActionType>
+  : ReduxActionWithPayload<ActionType, PayloadType>
 
 export type ReduxState = ReturnType<typeof rootReducer> & {
   _persist?: {

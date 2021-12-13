@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios'
 
-import Routes from 'constants/routes'
+import { Routes } from 'constants/routes'
 import { CaseType, transformProps } from 'services/transformProps'
 
 export const instance = axios.create({
