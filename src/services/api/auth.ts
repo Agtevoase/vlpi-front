@@ -17,3 +17,5 @@ export const fetchRegister = (params: FetchRegisterParameters) =>
 
 export const fetchLogout = () =>
   instance.delete('/logout', { headers: getAuthHeaders() })
+
+export const fetchProfile = () => getData(instance.delete('/profile'))

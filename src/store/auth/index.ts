@@ -1,4 +1,4 @@
-import { User } from 'types/models'
+import { FullUser, User } from 'types/models'
 import { AuthAction, AuthActionType } from './types'
 
 interface State {
@@ -6,6 +6,7 @@ interface State {
   user: User | null
   isLoading: boolean
   error: string | null
+  profile: FullUser | null
 }
 
 const initialState: State = {
@@ -13,13 +14,15 @@ const initialState: State = {
   user: null,
   isLoading: false,
   error: null,
+  profile: null,
 }
 
 const reducer = (state = initialState, action: AuthAction): State => {
   switch (action.type) {
     case AuthActionType.FETCH_REGISTER_BEGIN:
     case AuthActionType.FETCH_LOGIN_BEGIN:
-    case AuthActionType.FETCH_LOGOUT_BEGIN: {
+    case AuthActionType.FETCH_LOGOUT_BEGIN:
+    case AuthActionType.FETCH_PROFILE_BEGIN: {
       return {
         ...state,
         isLoading: true,
@@ -29,7 +32,8 @@ const reducer = (state = initialState, action: AuthAction): State => {
 
     case AuthActionType.FETCH_REGISTER_ERROR:
     case AuthActionType.FETCH_LOGIN_ERROR:
-    case AuthActionType.FETCH_LOGOUT_ERROR: {
+    case AuthActionType.FETCH_LOGOUT_ERROR:
+    case AuthActionType.FETCH_PROFILE_ERROR: {
       return {
         ...state,
         isLoading: false,
@@ -58,6 +62,14 @@ const reducer = (state = initialState, action: AuthAction): State => {
         isLoading: false,
         token: null,
         user: null,
+      }
+    }
+
+    case AuthActionType.FETCH_PROFILE_SUCCESS: {
+      return {
+        ...state,
+        isLoading: false,
+        profile: action.payload,
       }
     }
 

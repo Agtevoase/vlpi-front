@@ -1,4 +1,9 @@
-import { fetchLogin, fetchLogout, fetchRegister } from 'services/api/auth'
+import {
+  fetchLogin,
+  fetchLogout,
+  fetchProfile,
+  fetchRegister,
+} from 'services/api/auth'
 import { action } from 'store'
 import { Thunk } from 'store/types'
 
@@ -41,5 +46,17 @@ export const logout = (): Thunk => async (dispatch) => {
     dispatch(action(AuthActionType.FETCH_LOGOUT_SUCCESS))
   } catch (error) {
     dispatch(action(AuthActionType.FETCH_LOGOUT_ERROR, error))
+  }
+}
+
+export const getProfile = (): Thunk => async (dispatch) => {
+  try {
+    dispatch(action(AuthActionType.FETCH_PROFILE_BEGIN))
+
+    const { data } = await fetchProfile()
+
+    dispatch(action(AuthActionType.FETCH_PROFILE_SUCCESS, data))
+  } catch (error) {
+    dispatch(action(AuthActionType.FETCH_PROFILE_ERROR, error))
   }
 }

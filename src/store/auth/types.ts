@@ -1,5 +1,5 @@
 import { ReduxAction } from 'store/types'
-import { UserWithToken } from 'types/models'
+import { FullUser, UserWithToken } from 'types/models'
 
 export enum AuthActionType {
   FETCH_REGISTER_BEGIN = '[auth] FETCH_REGISTER_BEGIN',
@@ -11,11 +11,17 @@ export enum AuthActionType {
   FETCH_LOGOUT_BEGIN = '[auth] FETCH_LOGOUT_BEGIN',
   FETCH_LOGOUT_SUCCESS = '[auth] FETCH_LOGOUT_SUCCESS',
   FETCH_LOGOUT_ERROR = '[auth] FETCH_LOGOUT_ERROR',
+  FETCH_PROFILE_BEGIN = '[auth] FETCH_PROFILE_BEGIN',
+  FETCH_PROFILE_SUCCESS = '[auth] FETCH_PROFILE_SUCCESS',
+  FETCH_PROFILE_ERROR = '[auth] FETCH_PROFILE_ERROR',
 }
 
 type FetchLoginBegin = ReduxAction<AuthActionType.FETCH_LOGIN_BEGIN>
 
-type FetchLoginSuccess = ReduxAction<AuthActionType.FETCH_LOGIN_SUCCESS, UserWithToken>
+type FetchLoginSuccess = ReduxAction<
+  AuthActionType.FETCH_LOGIN_SUCCESS,
+  UserWithToken
+>
 
 type FetchLoginError = ReduxAction<AuthActionType.FETCH_LOGIN_ERROR, Error>
 
@@ -38,10 +44,16 @@ type FetchLogoutSuccess = ReduxAction<
   UserWithToken
 >
 
-type FetchLogoutError = ReduxAction<
-  AuthActionType.FETCH_LOGOUT_ERROR,
-  Error
+type FetchLogoutError = ReduxAction<AuthActionType.FETCH_LOGOUT_ERROR, Error>
+
+type FetchProfileBegin = ReduxAction<AuthActionType.FETCH_PROFILE_BEGIN>
+
+type FetchProfileSuccess = ReduxAction<
+  AuthActionType.FETCH_PROFILE_SUCCESS,
+  FullUser
 >
+
+type FetchProfileError = ReduxAction<AuthActionType.FETCH_PROFILE_ERROR, Error>
 
 export type AuthAction =
   | FetchLoginBegin
@@ -53,3 +65,6 @@ export type AuthAction =
   | FetchLogoutBegin
   | FetchLogoutSuccess
   | FetchLogoutError
+  | FetchProfileBegin
+  | FetchProfileSuccess
+  | FetchProfileError
