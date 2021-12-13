@@ -1,0 +1,39 @@
+@import './functions';
+
+body {
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 90px;
+  background-image: url('../assets/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: rem(48px);
+  line-height: 1.25;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: rem(36px);
+  line-height: 1.33;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: rem(28px);
+  line-height: rem(32px);
+}

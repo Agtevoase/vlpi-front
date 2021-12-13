@@ -1,0 +1,43 @@
+@import '../../../styles/vars';
+@import '../../../styles/functions';
+
+.input {
+  border-radius: 8px;
+  border: $inputs-text-border-color solid 1px;
+  color: black;
+  height: 48px;
+  stroke-opacity: 0.4;
+  padding: 10px;
+  margin-bottom: 30px;
+  transition: 0.2s;
+  outline: none;
+  &:active,
+  &:focus {
+    border: 1px black solid;
+  }
+}
+
+.error {
+  position: absolute;
+  color: $danger;
+  font-size: 14px;
+  bottom: 10px;
+  left: 10px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+
+  .label {
+    font-size: rem(20px);
+    line-height: 1.2;
+    margin-bottom: rem(14px);
+  }
+}
+
+.input::placeholder {
+  color: $inputs-text-placeholder-color;
+  font-size: 16;
+}

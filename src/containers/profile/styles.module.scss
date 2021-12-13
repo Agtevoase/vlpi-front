@@ -1,0 +1,109 @@
+@import '../../styles/functions';
+@import '../../styles/vars';
+$width:100%;
+$min-width:600px;
+$height:600px;
+.container {
+    margin-left: 420px;
+    margin-right: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.box {
+    margin-top: 100px;
+    min-width: $min-width;
+    width: $width;
+    height: $height;
+    background-color: white;
+    border-radius: 24px;
+    position: relative;
+}
+
+.userName {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    font-size: 48px;
+    font-weight: 600;
+    color: $dark;
+}
+
+.stat {
+    width: $width;
+    height: $height;
+    min-width: $min-width;
+    position: absolute;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.statText {
+    font-size: 22px;
+    font-weight: 300;
+    height: 26px;
+}
+
+.leftStat {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 50px;
+}
+
+.rightStat {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: 100px;
+}
+
+.green {
+    color: $success;
+}
+
+.red {
+    color: $bad;
+}
+
+.buttons {
+    height: $height;
+    width: $width;
+    min-width: $min-width;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.button1 {
+    margin: 30px;
+    margin-left: 50px;
+    margin-right: 20px;
+}
+
+.button2 {
+    margin: 30px;
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.button3 {
+    margin: 30px;
+    margin-right: 20px;
+}
+
+.button4 {
+    margin: 30px;
+    margin-left: 0;
+    margin-right: 55px;
+}

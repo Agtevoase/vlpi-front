@@ -1,0 +1,75 @@
+@import '../../styles/vars';
+.button {
+    font-size: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-weight: 600;
+    transition: 0.2s;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.primary {
+    background-color: $primary;
+    color: white;
+    border: 1px solid black;
+    &:hover {
+        border-color: $primary-light;
+        background-color: $primary-light;
+    }
+}
+
+.danger {
+    background-color: white;
+    color: $danger;
+    border: 2px solid $danger;
+    border-radius: 8px;
+    font-weight: 600;
+    &:hover {
+        background-color: $danger;
+        color: white;
+    }
+}
+
+.success {
+    background-color: $success;
+    color: white;
+    border: none;
+    border: 2px solid $success;
+    &:hover {
+        border-color: $success-light;
+        background-color: $success-light;
+    }
+}
+
+.secondary {
+    background-color: white;
+    color: $success;
+    border: 2px solid $success;
+    &:hover {
+        background-color: $success;
+        color: white;
+    }
+}
+
+.light {
+    background-color: $light;
+    color: white;
+    border: 2px solid $light;
+    &:hover {
+        border-color: $light-light;
+        background-color: $light-light;
+    }
+}
+
+.ghost-light {
+    background-color: white;
+    color: $light;
+    border: 2px solid $light;
+    &:hover {
+        background-color: $light;
+        color: white;
+    }
+}

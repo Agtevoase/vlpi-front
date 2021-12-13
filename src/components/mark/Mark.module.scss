@@ -1,0 +1,38 @@
+@import "../../styles/vars";
+.mark {
+    background-color: white;
+    color: white;
+    font-size: 22px;
+    width: 100px;
+    height: 40px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.markBox {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.minMark {
+    margin-bottom: 0;
+    color: $bad;
+    font-size: 20px;
+}
+
+.badMark {
+    color: $bad;
+    border-color: $bad;
+}
+
+.goodMark {
+    color: $success;
+    border-color: $success;
+}
