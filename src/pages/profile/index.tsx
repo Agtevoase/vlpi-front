@@ -1,4 +1,4 @@
-import ProfileContainer from "containers/profle"
+import ProfileContainer from "containers/profile"
 
 const ProfilePage: React.FC = () => <ProfileContainer/>
 

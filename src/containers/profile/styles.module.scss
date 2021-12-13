@@ -1,6 +1,7 @@
 @import '../../styles/functions';
 @import '../../styles/vars';
 $width:100%;
+$min-width:600px;
 $height:600px;
 .container {
     margin-left: 420px;
@@ -13,6 +14,7 @@ $height:600px;
 
 .box {
     margin-top: 200px;
+    min-width: $min-width;
     width: $width;
     height: $height;
     background-color: white;
@@ -32,6 +34,7 @@ $height:600px;
 .stat {
     width: $width;
     height: $height;
+    min-width: $min-width;
     position: absolute;
     margin: auto;
     display: flex;
@@ -74,6 +77,7 @@ $height:600px;
 .buttons {
     height: $height;
     width: $width;
+    min-width: $min-width;
     position: absolute;
     bottom: 0;
     display: flex;
