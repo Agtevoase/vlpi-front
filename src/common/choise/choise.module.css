@@ -1,0 +1,13 @@
+.choise {
+
+  background-color: #757575;
+  display: inline-block;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+
+}

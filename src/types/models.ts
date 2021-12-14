@@ -18,6 +18,43 @@ export interface FullUser extends User {
   }
 }
 
+export interface Choice {
+  id: number,
+  exerciseId: number,
+  title: string,
+  tooltip: null,
+  createdAt: string,
+  updatedAt: string,
+  columnId?: number | null
+}
+
+export interface Column {
+  id: number,
+  exerciseId: number,
+  title: string,
+  maxChoices: number,
+  createdAt: string,
+  updatedAt: string,
+  
+}
+
+export interface ChoiceColumn {
+  choiceId: number,
+  columnId: number,
+  order: number    
+}
+
+export interface SubmitExercise {
+  status: string,
+  exerciseId: number,
+  choiceColumn: ChoiceColumn[]
+}
+
+export interface Statistics {
+  bestMark: number,
+  hasPassed: boolean
+}
+
 export interface Exercise {
   id: number
   userId: number
@@ -26,4 +63,8 @@ export interface Exercise {
   maxChoices: number
   type: 'ordering' | 'grouping'
   minMark: number
+  statistics: Statistics
+  choices?: Choice[],
+  columns?: Column[],
+  user?: User
 }

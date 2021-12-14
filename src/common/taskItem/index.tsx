@@ -18,6 +18,8 @@ interface Props {
   markValue?: number
   minMark?: number
   isDraft?: boolean
+  isPassed: boolean
+  bestMark: number
   onClick: (id: number) => void
 }
 
@@ -28,6 +30,8 @@ const TaskItem: React.FC<Props> = ({
   markValue,
   minMark,
   isDraft,
+  isPassed,
+  bestMark,
   onClick,
 }) => {
   let passIcon
@@ -35,17 +39,14 @@ const TaskItem: React.FC<Props> = ({
 
   const minMarkText = `${minMark ?? 100}%`
 
-  if (markValue) {
-    if (markValue < (minMark ?? 100)) {
-      passIcon = <FailedIcon />
-    } else {
-      passIcon = <PassedIcon />
-    }
+  if(isPassed){
+    passIcon = <PassedIcon />
+  } else {
+    passIcon = <FailedIcon />
+  }
 
-    score = `Best: ${markValue}%`
-  } else if (isDraft) {
-    passIcon = <DraftIcon />
-    score = 'Draft'
+  if (isPassed !== null) {
+    score = `Best: ${bestMark}%`
   } else {
     score = 'No Atempts'
   }
@@ -61,11 +62,11 @@ const TaskItem: React.FC<Props> = ({
       <TaskIcon taskNumber={number} />
       <span className={styles.taskTitle}>{title}</span>
       <span className={styles.taskResult}>{score}</span>
-
+{/* 
       <span className={styles.minMark}>
-        <div>min.</div>
-        <div>{minMarkText}</div>
-      </span>
+        <div>max.</div>
+        <div>{bestMark}</div>
+      </span> */}
       <span className={styles.passIcon}>{passIcon}</span>
     </div>
   )

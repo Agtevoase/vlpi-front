@@ -6,6 +6,7 @@ export enum Routes {
   exercises = '/exercises',
   exercise = '/exercises/[id]',
   profile = '/profile',
+  exerciseResult = '/exercisesResult'
 }
 
 export const getRouterPath = (route: string) =>

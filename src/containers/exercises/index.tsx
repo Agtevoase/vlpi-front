@@ -10,7 +10,7 @@ import { Routes } from 'constants/routes'
 import styles from './styles.module.scss'
 
 const ExerciseContainer: React.FC = () => {
-  const { isLoading, list } = useSelector((state: ReduxState) => state.exercise)
+  const { isLoading, list } = useSelector((state: ReduxState) => state.exercises)
 
   const navigate = useNavigate()
 
