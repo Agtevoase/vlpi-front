@@ -1,3 +1,5 @@
+import { ExerciseResultColumn } from "store/exercise";
+
 export interface User {
   id: number
   name: string
@@ -55,6 +57,17 @@ export interface Statistics {
   hasPassed: boolean
 }
 
+export interface BestGraded{
+  id: number
+  userId: number
+  exerciseId: number
+  status: string
+  mark: number
+  createdAt: string
+  updatedAt: string
+  columns: ExerciseResultColumn[]
+}
+
 export interface Exercise {
   id: number
   userId: number
@@ -63,8 +76,9 @@ export interface Exercise {
   maxChoices: number
   type: 'ordering' | 'grouping'
   minMark: number
+  bestGraded: BestGraded
   statistics: Statistics
-  choices?: Choice[],
-  columns?: Column[],
+  choices?: Choice[]
+  columns?: Column[]
   user?: User
 }

@@ -1,8 +1,12 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import DraftIcon from 'components/icons/draft'
 import FailedIcon from 'components/icons/failed'
 
 import PassedIcon from 'components/icons/passed'
 import TaskIcon from 'components/icons/task'
+import { Routes } from 'constants/routes'
+import { useNavigate } from 'react-router-dom'
 
 import styles from './TaskItem.module.scss'
 
@@ -38,6 +42,7 @@ const TaskItem: React.FC<Props> = ({
   let score
 
   const minMarkText = `${minMark ?? 100}%`
+  const navigate = useNavigate();
 
   if(isPassed){
     passIcon = <PassedIcon />
@@ -67,7 +72,10 @@ const TaskItem: React.FC<Props> = ({
         <div>max.</div>
         <div>{bestMark}</div>
       </span> */}
-      <span className={styles.passIcon}>{passIcon}</span>
+      <span onClick={() => {
+        
+        navigate(Routes.exerciseResult)
+      }} className={styles.passIcon}>{passIcon}</span>
     </div>
   )
 }

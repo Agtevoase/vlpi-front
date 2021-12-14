@@ -20,9 +20,9 @@ import FailedIcon from 'components/icons/failed'
 import s from './styles.module.scss'
 
 const ExerciseResultContainer: React.FC = () => {
-  const { isLoading, exercise, columns, exerciseResult, choices } = useSelector((state: ReduxState) => state.exercise)
+  const { isLoading, exercise, exerciseResult, choices } = useSelector((state: ReduxState) => state.exercise)
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   if (isLoading || !exerciseResult || !exerciseResult.columns) return <Loader />
 
