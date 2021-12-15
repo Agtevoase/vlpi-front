@@ -14,6 +14,7 @@ export interface UserWithToken {
 export interface FullUser extends User {
   avatar: string
   statistics: {
+    averageDoneMark: number | null
     averageMark: number | null
     exercisesDone: number
     exercisesLeft: number

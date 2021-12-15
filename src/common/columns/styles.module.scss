@@ -1,21 +1,24 @@
+@import '../../styles/vars';
 .columns {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  min-width: 600px;
-  min-height: 300px;
-  margin: 10px;
-  box-sizing: content-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 600px;
+    min-height: 400px;
+    margin: 10px;
+    box-sizing: content-box;
+    width: 100%;
+    height: 400px;
+}
+
+.dropable {
+    max-height: 400px !important;
 }
 
 .column {
-  box-sizing: content-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-
-  width: 100%;
-  height: 100%;
-  margin: 0px 20px;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 500px;
 }
