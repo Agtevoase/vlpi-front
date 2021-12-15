@@ -1,10 +1,24 @@
 .container {
-  height: 100vh;
-  padding: 0 124px;
-  margin: 0 auto;
-  background: white;
-  width: 100%;
-  max-width: 1320px;
-  display: flex;
-  align-items: flex-start;
+    min-height: calc(100vh - 80px);
+    padding: 0 124px;
+    margin: 0 auto;
+    background: white;
+    width: 100%;
+    max-width: 1320px;
+    display: flex;
+    align-items: flex-start;
+    animation: mymove 0.2s ease-in;
+    z-index: -100;
+    padding-bottom: 50px;
+}
+
+@keyframes mymove {
+    0% {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
