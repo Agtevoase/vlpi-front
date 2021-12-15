@@ -1,39 +1,48 @@
 @import './functions';
-
 body {
-  margin: 0;
-  font-family: 'Rubik', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 * {
     box-sizing: border-box;
 }
 
+.background {
+    background-color: rgba(255, 255, 255, 0.481);
+    overflow-y: auto;
+    height: 100%;
+}
+
 .page {
-  width: 100%;
-  min-height: 100vh;
-  padding-top: 90px;
-  background-image: url('../assets/images/bg.jpg');
-  background-size: cover;
-  background-position: center;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 80px;
+    background-image: url('../assets/images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    overflow-y: auto;
+    touch-action: none;
+    height: 100%;
 }
 
 h1 {
-  font-weight: 500;
-  font-size: rem(48px);
-  line-height: 1.25;
+    font-weight: 500;
+    font-size: rem(48px);
+    line-height: 1.25;
 }
 
 h2 {
-  font-weight: 500;
-  font-size: rem(36px);
-  line-height: 1.33;
+    font-weight: 500;
+    font-size: rem(36px);
+    line-height: 1.33;
 }
 
 h3 {
-  font-weight: 500;
-  font-size: rem(28px);
-  line-height: rem(32px);
+    font-weight: 500;
+    font-size: rem(28px);
+    line-height: rem(32px);
 }

@@ -24,7 +24,7 @@ const ProfileContainer: React.FC = () => {
     return <Loader />
   }
 
-  const { exercisesDone, exercisesLeft, averageMark } = profile.statistics
+  const { exercisesDone, exercisesLeft, averageMark, averageDoneMark } = profile.statistics
   const { name } = profile
 
   const totalTasksAvailable = exercisesDone + exercisesLeft
@@ -32,8 +32,14 @@ const ProfileContainer: React.FC = () => {
 
   const markStyle = cn({
     [styles.statText]: true,
-    [styles.green]: (averageMark ?? 0) >= 80,
-    [styles.red]: (averageMark ?? 0) < 80,
+    [styles.green]: averageMark && (averageMark ?? 0) >= 80,
+    [styles.red]: averageMark && (averageMark ?? 0) < 80,
+  })
+
+  const doneMarkStyle = cn({
+    [styles.statText]: true,
+    [styles.green]: averageDoneMark && (averageDoneMark ?? 0) >= 80,
+    [styles.red]: averageDoneMark && (averageDoneMark ?? 0) < 80,
   })
 
   return (
@@ -60,7 +66,10 @@ const ProfileContainer: React.FC = () => {
 
           <span className={styles.rightStat}>
             <span className={markStyle}>{`Average score: ${
-              averageMark ?? 0
+              averageMark ?? '-'
+            }%`}</span>
+             <span className={doneMarkStyle}>{`Done tasks average score: ${
+              averageDoneMark ?? '-'
             }%`}</span>
             <span className={styles.statText} />
 

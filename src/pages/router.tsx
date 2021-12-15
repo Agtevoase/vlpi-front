@@ -17,6 +17,7 @@ import HomePage from '.'
 import ProfilePage from './profile'
 import ExercisePage from './exercises/id'
 import ExercisesPage from './exercises'
+import ExerciseResult from './exerciseResult'
 
 const Router: React.FC = () => {
   const { token } = useSelector((state: ReduxState) => state.auth)
@@ -43,6 +44,10 @@ const Router: React.FC = () => {
         <Route
           path={getRouterPath(Routes.exercise)}
           element={token ? <ExercisePage /> : navigateToLogin}
+        />
+        <Route
+          path={getRouterPath(Routes.exerciseResult)}
+          element={token ? <ExerciseResult /> : navigateToLogin}
         />
         <Route
           path={Routes.exercises}

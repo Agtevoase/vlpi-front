@@ -24,6 +24,8 @@ const TaskList: React.FC<Props> = ({ tasks, onClick }) => {
               // isDraft={task.isDraft}
               // markValue={task.markValue}
               minMark={task.minMark}
+              isPassed={task.statistics.hasPassed}
+              bestMark={task.statistics.bestMark}
               number={index + 1}
               title={task.title}
               id={task.id}

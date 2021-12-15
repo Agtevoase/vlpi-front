@@ -10,18 +10,22 @@ import { Routes } from 'constants/routes'
 import styles from './styles.module.scss'
 
 const ExerciseContainer: React.FC = () => {
-  const { isLoading, list } = useSelector((state: ReduxState) => state.exercise)
+  const { isLoading, list } = useSelector(
+    (state: ReduxState) => state.exercises,
+  )
 
   const navigate = useNavigate()
 
   if (isLoading || !list) return <Loader />
 
   return (
-    <div className={styles.container}>
-      <TaskList
-        tasks={list}
-        onClick={(id) => navigate(Routes.exercise.replace('[id]', `${id}`))}
-      />
+    <div className="background">
+      <div className={styles.container}>
+        <TaskList
+          tasks={list}
+          onClick={(id) => navigate(Routes.exercise.replace('[id]', `${id}`))}
+        />
+      </div>
     </div>
   )
 }

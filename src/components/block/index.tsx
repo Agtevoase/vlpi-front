@@ -12,18 +12,17 @@ export const enum BlockType {
 interface Props {
   order?: number
   text: string
-  removable?: boolean
   blockType?: BlockType
-  onRemoveClick: () => void
+  onRemoveClick?: () => void 
 }
 
-const Block: React.FC<Props> = ({ order, text, removable, blockType, onRemoveClick }) => {
+const Block: React.FC<Props> = ({ order, text, blockType, onRemoveClick }) => {
     let cancelButton;
 
     if(order !== undefined && blockType === undefined){
         cancelButton =  <div  tabIndex={0} role = "button" className={styles.cancelIcon} 
-         onClick={() => onRemoveClick()}
-        onKeyDown={() => onRemoveClick()} >
+         onClick={() =>  {if(onRemoveClick){onRemoveClick()}}}
+        onKeyDown={() => {if(onRemoveClick){onRemoveClick()}}} >
          <CancelIcon />
        </div>
     }

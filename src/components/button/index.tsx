@@ -15,12 +15,13 @@ interface Props {
   submit?: boolean
   type: ButtonType
   ghost?: boolean
+  width?: number
   onClick: () => void
 }
 
-const Button: React.FC<Props> = ({ text, type, ghost, onClick, submit }) => {
+const Button: React.FC<Props> = ({ text, type, ghost, onClick, submit, width }) => {
   return (
-    <button
+    <button style={{'width': width}}
       type={submit ? 'submit' : 'button'}
       className={cn({
         [styles.ghost]: ghost,

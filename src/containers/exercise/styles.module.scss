@@ -1,0 +1,106 @@
+@import '../../styles/vars';
+.container {
+    min-height: calc(100vh - 80px);
+    padding: 0 124px;
+    margin: 0 auto;
+    background: white;
+    width: 100%;
+    max-width: 1320px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: stretch;
+    animation: mymove 0.3s ease-in;
+    z-index: -100;
+}
+
+@keyframes mymove {
+    0% {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.frame {
+    padding-right: 100px;
+    padding: 20px 40px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid $light;
+    border-radius: 48px;
+}
+
+.scrollBox {
+    overflow-y: auto;
+    height: 230px;
+}
+
+.scrollBoxFrame {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.box {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.scrollBox::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollBox::-webkit-scrollbar-track {
+    width: 6px;
+    background-color: $light-light;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    border-radius: 3px;
+}
+
+.scrollBox::-webkit-scrollbar-thumb {
+    background: $light;
+    border-radius: 3px;
+    &:hover {
+        background: $gray;
+    }
+}
+
+.titleBox {
+    padding-top: 42px;
+    padding-bottom: 32px;
+    display: inline-flex;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 500;
+    padding-top: 10px;
+    padding-left: 20px;
+    color: $gray;
+}
+
+.choices {
+    min-width: 300px;
+    height: 300px;
+    overflow: auto;
+    width: 80%;
+    background-color: white;
+    border-radius: 32px;
+    border: 1px solid black;
+    padding: 15px 2px;
+}
+
+.footer {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
